@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/com/javarush/test/level29/lesson15/big01/car/Cabriolet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/javarush/test/level29/lesson15/big01/car/Car.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/javarush/test/level29/lesson15/big01/car/Sedan.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/javarush/test/level29/lesson15/big01/car/Truck.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/javarush/test/level29/lesson15/big01/user/User.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/javarush/test/level29/lesson15/big01/user/Work.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/javarush/test/level30/lesson04/home01/Consumer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/javarush/test/level30/lesson04/home01/Producer.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="swt">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Libraries/swt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Libraries/swt-debug.jar!/" />
+      <root url="file://$PROJECT_DIR$" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="jar://$PROJECT_DIR$/../../Libraries/swt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Libraries/swt-debug.jar!/" />
+    </NATIVE>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/src/com/javarush/com.javarush.test" />
+    </SOURCES>
+  </library>
+</component>

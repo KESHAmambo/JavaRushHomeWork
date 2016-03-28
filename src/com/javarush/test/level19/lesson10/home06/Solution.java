@@ -1,0 +1,109 @@
+package com.javarush.test.level19.lesson10.home06;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+/* Замена чисел
+1. В статическом блоке инициализировать словарь map парами [число-слово] от 0 до 12 включительно
+Например, 0 - "ноль", 1 - "один", 2 - "два"
+2. Считать с консоли имя файла
+3. Заменить все числа на слова используя словарь map
+4. Результат вывести на экран
+5. Закрыть потоки
+
+Пример данных:
+Это стоит 1 бакс, а вот это - 12 .
+Переменная имеет имя file1.
+110 - это число.
+
+Пример вывода:
+Это стоит один бакс, а вот это - двенадцать .
+Переменная имеет имя file1.
+110 - это число.
+*/
+
+public class Solution {
+    public static Map<Integer, String> map = new HashMap<Integer, String>();
+    static
+    {
+        map.put(0, "ноль");
+        map.put(1, "один");
+        map.put(2, "два");
+        map.put(3, "три");
+        map.put(4, "четыре");
+        map.put(5, "пять");
+        map.put(6, "шесть");
+        map.put(7, "семь");
+        map.put(8, "восемь");
+        map.put(9, "девять");
+        map.put(10, "десять");
+        map.put(11, "одиннадцать");
+        map.put(12, "двенадцать");
+    }
+    public static void main(String[] args) throws IOException
+    {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String fileName = reader.readLine();
+        Scanner scan = new Scanner(new File(fileName));
+        ArrayList<String> text = new ArrayList<>();
+
+        while(scan.hasNext())
+        {
+            ArrayList<String> wordList = new ArrayList<>();
+            String temp = scan.nextLine();
+            while (temp.indexOf(' ') >= 0)
+            {
+                wordList.add(temp.substring(0, temp.indexOf(' ')));
+                temp = temp.substring(temp.indexOf(' ') + 1);
+            }
+            wordList.add(temp);
+
+            String s = "";
+            for(int i = 0; i < wordList.size(); i++)
+            {
+                String word = wordList.get(i);
+
+                temp = word.replaceAll("\\p{Punct}", "");
+                char[] array = temp.toCharArray();
+                boolean hasAl = false;
+                for (char c: array)
+                    if (Character.isAlphabetic(c))
+                    {
+                        hasAl = true;
+                        break;
+                    }
+                if(hasAl)
+                {
+                    if(i == wordList.size() - 1)
+                        s += word;
+                    else
+                        s += word + " ";
+                }
+                else
+                {
+                    for (Map.Entry<Integer, String> pair : map.entrySet())
+                        if (temp.equals("" + pair.getKey()))
+                        {
+                            word = word.replace("" + pair.getKey(), pair.getValue());
+                            break;
+                        }
+                    if (i == wordList.size() - 1)
+                        s += word;
+                    else
+                        s += word + " ";
+                }
+            }
+            text.add(s);
+        }
+
+        for(String s: text)
+        {
+            System.out.println(s);
+        }
+        reader.close();
+        scan.close();
+    }
+}
